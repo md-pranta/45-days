@@ -6,6 +6,7 @@ using namespace std;
 #define SetBit(x, k) (x |= (1LL << k))
 #define ClearBit(x, k) (x &= ~(1LL << k))
 #define CheckBit(x, k) ((x>>k)&1)
+#define M 10000000007
 
 
 int main(){
