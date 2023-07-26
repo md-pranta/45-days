@@ -1,1 +1,1 @@
-`cycle 1 and 2 comlete`
+`cycle 1 and 2 complete`
