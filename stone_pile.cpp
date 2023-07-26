@@ -15,17 +15,18 @@ int main(){
 
     int n;
     cin >> n;
-
-    ll ans=0;
-
-    for (int i = 0; i < 63; i++){
-        int full_interval = (n+1)/(1LL << (i+1));
-        ans += full_interval * (1LL << i);
-
-        ll extra = (n+1)<<(1LL<<(i+1));
-        ans += max(0LL, extra-(1LL<<i));
+    int a[n];
+    for(int i = 0; i < n; i++)cin >> a[i];
+    int ans = (1<<30);
+    for (int i = 0; i < (1<<n); i++){
+        int s1 = 0, s2 = 0;
+        for(int j = 0; j <n; j++){
+            if(CheckBit(i, j)) s1 += a[j];
+            else s2 += a[j];
+        }
+        ans = min(ans,abs(s1-s2));
     }
-    cout << ans << endl;
+    cout<<ans<<endl;
 
     return 0;
 }
