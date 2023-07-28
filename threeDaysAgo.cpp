@@ -17,18 +17,18 @@ int main(){
     string s;
     cin >> s;
 
-    string x = "0000000000";
+    int x = 0;//"0000000000";
 
-    map<string, int> cnt;
+    map<int, int> cnt;
     cnt[x]++;
 
     ll ans = 0;
 
     for(int i = 0; i < s.size(); i++){
         int d = s[i]-'0';
-        //x ^= (1<<d);
-        if(x[d] =='0')x[d]='1';
-        else x[d] = '0';
+        x ^= (1<<d);
+        // if(x[d] =='0')x[d]='1';
+        // else x[d] = '0';
         ans += cnt[x];
         cnt[x]++;
     }
